@@ -74,31 +74,31 @@ GPSDriverMTK::configure(unsigned &baudrate, const GPSConfig &config)
 	baudrate = MTK_BAUDRATE;
 
 	/* Write config messages, don't wait for an answer */
-	if (strlen(MTK_OUTPUT_5HZ) != write(MTK_OUTPUT_5HZ, strlen(MTK_OUTPUT_5HZ))) {
+	if ((int)strlen(MTK_OUTPUT_5HZ) != write(MTK_OUTPUT_5HZ, strlen(MTK_OUTPUT_5HZ))) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if (strlen(MTK_SET_BINARY) != write(MTK_SET_BINARY, strlen(MTK_SET_BINARY))) {
+	if ((int)strlen(MTK_SET_BINARY) != write(MTK_SET_BINARY, strlen(MTK_SET_BINARY))) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if (strlen(MTK_SBAS_ON) != write(MTK_SBAS_ON, strlen(MTK_SBAS_ON))) {
+	if ((int)strlen(MTK_SBAS_ON) != write(MTK_SBAS_ON, strlen(MTK_SBAS_ON))) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if (strlen(MTK_WAAS_ON) != write(MTK_WAAS_ON, strlen(MTK_WAAS_ON))) {
+	if ((int)strlen(MTK_WAAS_ON) != write(MTK_WAAS_ON, strlen(MTK_WAAS_ON))) {
 		goto errout;
 	}
 
 	gps_usleep(10000);
 
-	if (strlen(MTK_NAVTHRES_OFF) != write(MTK_NAVTHRES_OFF, strlen(MTK_NAVTHRES_OFF))) {
+	if ((int)strlen(MTK_NAVTHRES_OFF) != write(MTK_NAVTHRES_OFF, strlen(MTK_NAVTHRES_OFF))) {
 		goto errout;
 	}
 
